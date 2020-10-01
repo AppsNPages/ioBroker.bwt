@@ -1,0 +1,79 @@
+{
+	"common": {
+		"name": "bwt",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "BWT",
+		"titleLang": {
+			"en": "BWT",
+			"de": "BWT",
+			"ru": "BWT",
+			"pt": "BWT",
+			"nl": "BWT",
+			"fr": "BWT",
+			"it": "BWT",
+			"es": "BWT",
+			"pl": "BWT",
+			"zh-cn": "BWT"
+		},
+		"desc": {
+			"en": "Data from BWT Perla Systems",
+			"de": "Data from BWT Perla Systems",
+			"ru": "Data from BWT Perla Systems",
+			"pt": "Data from BWT Perla Systems",
+			"nl": "Data from BWT Perla Systems",
+			"fr": "Data from BWT Perla Systems",
+			"it": "Data from BWT Perla Systems",
+			"es": "Data from BWT Perla Systems",
+			"pl": "Data from BWT Perla Systems",
+			"zh-cn": "Data from BWT Perla Systems"
+		},
+		"authors": [
+			"Erik Haselsteiner <erik@haselsteiner.info>"
+		],
+		"keywords": [
+			"ioBroker",
+			"template",
+			"Smart Home",
+			"home automation"
+		],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "bwt.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/AppsNPages/ioBroker.bwt/master/admin/bwt.png",
+		"readme": "https://github.com/AppsNPages/ioBroker.bwt/blob/master/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "metering",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "poll",
+		"materialize": true,
+		"dependencies": [
+			{
+				"js-controller": ">=2.0.0"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42"
+	},
+	"objects": [],
+	"instanceObjects": []
+}

@@ -1,0 +1,33 @@
+{
+	"cli": true,
+	"adapterName": "bwt",
+	"title": "BWT",
+	"description": "Data from BWT Perla Systems",
+	"expert": "no",
+	"features": [
+		"adapter"
+	],
+	"adminFeatures": [],
+	"type": "metering",
+	"startMode": "daemon",
+	"connectionType": "local",
+	"dataSource": "poll",
+	"connectionIndicator": "no",
+	"language": "JavaScript",
+	"tools": [
+		"ESLint",
+		"type checking"
+	],
+	"indentation": "Tab",
+	"quotes": "double",
+	"es6class": "yes",
+	"authorName": "Erik Haselsteiner",
+	"authorGithub": "AppsNPages",
+	"authorEmail": "erik@haselsteiner.info",
+	"gitRemoteProtocol": "HTTPS",
+	"gitCommit": "no",
+	"license": "MIT License",
+	"ci": "gh-actions",
+	"dependabot": "no",
+	"creatorVersion": "1.29.1"
+}
