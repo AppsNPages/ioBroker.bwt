@@ -7,14 +7,17 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require("@iobroker/adapter-core");
-let request;
+const request = require('request').defaults({jar: true});
 let adapter;
 
-adapter.on("ready", function() {
-	main();
-});
+var _deviceUpdateTimer;
 
-function main() {
-	adapter.log.info("IP: " + adapter.config.ipaddress);
-	adapter.log.info("Passwort: " + adapter.config.password);
-}
+adapter.on("ready", function() {
+   var device = new BWTDevice(adapter);
+
+   device.requestDataUpdate();
+
+   _deviceUpdateTimer = setInterval(function() {
+      device.requestDataUpdate();
+   }, adapter.config.interval * 60 * 1000);
+});

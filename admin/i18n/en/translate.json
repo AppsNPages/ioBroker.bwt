@@ -2,5 +2,7 @@
     "IP Address": "IP Addresse",
     "which IP": "IP Addresse of the BWT device",
     "Password": "Password",
-    "delivered": "The password was delivered within the welcome mail when you registered your device"
+    "delivered": "The password was delivered within the welcome mail when you registered your device",
+    "Update Interval": "Update Interval",
+    "interval in seconds": "Intervall in seconds"
 }
