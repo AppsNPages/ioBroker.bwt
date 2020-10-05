@@ -95,6 +95,7 @@ module.exports = function(myadapter) {
         common: {
            name: 'aktueller Durchfluss',
            type: 'number',
+           role: "value",
            read: true,
            write: false,
            unit: 'l'
@@ -113,6 +114,7 @@ module.exports = function(myadapter) {
          common: {
             name: 'aktueller Durchfluss Prozent',
             type: 'number',
+            role: "value",
             read: true,
             write: false,
             unit: '%'
@@ -149,6 +151,7 @@ module.exports = function(myadapter) {
          common: {
             name: 'Durchfluss in diesem Monat',
             type: 'number',
+            role: "value",
             read: true,
             write: false,
             unit: 'l'
@@ -167,6 +170,7 @@ module.exports = function(myadapter) {
          common: {
             name: 'Durchfluss in diesem Jahr',
             type: 'number',
+            role: "value",
             read: true,
             write: false,
             unit: 'l'
@@ -185,6 +189,7 @@ module.exports = function(myadapter) {
          common: {
             name: 'Regenerierungsmittel nachfüllen in',
             type: 'number',
+            role: "value",
             read: true,
             write: false,
             unit: 'Tagen'
@@ -203,6 +208,7 @@ module.exports = function(myadapter) {
          common: {
             name: 'Regeneriermittel verbleibend',
             type: 'number',
+            role: "value",
             read: true,
             write: false,
             unit: '%'
