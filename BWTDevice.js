@@ -1,3 +1,5 @@
+var request = require('request').defaults({jar: true});
+
 module.exports = function(myadapter) {
    var adapter = myadapter;
 
@@ -37,7 +39,7 @@ module.exports = function(myadapter) {
         if(err) {
            adapter.log.error(err);
         } else {
-           handleResponse(JSON.parse(body));
+           handleResponse(body);
         }
      });
   }
@@ -57,7 +59,8 @@ module.exports = function(myadapter) {
      });
   }
 
-  function handleCurrentThroughput(data) {
+  function handleCurrentThroughput(rawData) {
+     var data = JSON.parse(rawData);
      var dataPointName = "AquaPerla.aktuellerDurchfluss";
 
      adapter.setObjectNotExists(dataPointName, {

@@ -6,9 +6,12 @@
 
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
-const utils = require("@iobroker/adapter-core");
-const request = require('request').defaults({jar: true});
-let adapter;
+// @ts-ignore
+var utils = require(__dirname + '/lib/utils');
+var adapter = utils.Adapter('BWTDevice');
+
+var BWTDevice = require("./BWTDevice");
+var device = null;
 
 var _deviceUpdateTimer;
 

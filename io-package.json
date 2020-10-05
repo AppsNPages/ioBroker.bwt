@@ -5,17 +5,17 @@
 		"news": {
 			"0.0.1": {
 				"en": "initial release",
-				"de": "Erstveröffentlichung",
+				"de": "Erstveröffentlichung"
 			}
 		},
 		"title": "BWT",
 		"titleLang": {
 			"en": "BWT",
-			"de": "BWT",
+			"de": "BWT"
 		},
 		"desc": {
 			"en": "Data from BWT Perla Systems",
-			"de": "Data from BWT Perla Systems",
+			"de": "Data from BWT Perla Systems"
 		},
 		"authors": [
 			"Erik Haselsteiner <erik@haselsteiner.info>"
