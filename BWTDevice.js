@@ -1,7 +1,7 @@
-var request = require('request').defaults({jar: true});
-
 module.exports = function(myadapter) {
    var adapter = myadapter;
+
+   var request = require('request').defaults({jar: true});
 
    const formdata = {
        'STLoginPWField': adapter.config.password

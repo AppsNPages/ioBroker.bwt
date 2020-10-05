@@ -8,7 +8,7 @@
 // you need to create an adapter
 // @ts-ignore
 const utils = require("@iobroker/adapter-core");
-var adapter = utils.Adapter('BWTDevice');
+var adapter = utils.Adapter('bwt');
 
 var BWTDevice = require("./BWTDevice");
 var device = null;

@@ -50,7 +50,8 @@
 	},
 	"native": {
 		"ipaddress": "",
-		"password": ""
+		"password": "",
+		"interval": "60"
 	},
 	"objects": [],
 	"instanceObjects": []
