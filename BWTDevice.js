@@ -52,12 +52,24 @@ module.exports = function(myadapter) {
            type: 'Wasseraufbereitung',
            read: true,
            write: false
+        },
+        native: {
+           id: "AquaPerla_1"
         }
      }, function() {
         handleCurrentThroughput(data);
-
+        handleCurrentThroughputPercent(data);
+        handleThroughputToday(data);
+        handleThroughputMonth(data);
+        handleThroughputYear(data);
+        handleFillupDays(data);
+        handleCurrentLevel(data);
      });
   }
+
+  /*
+  RegeneriemittelVerbleibend
+  */
 
   function handleCurrentThroughput(rawData) {
      var data = JSON.parse(rawData);
@@ -70,10 +82,118 @@ module.exports = function(myadapter) {
            type: 'number',
            read: true,
            write: false,
-           unit: 'l/h'
+           unit: 'l'
         }
      });
 
      adapter.setState(dataPointName, {val: data.aktuellerDurchfluss, ack: true});
   }
+
+  function handleCurrentThroughputPercent(rawData) {
+      var data = JSON.parse(rawData);
+      var dataPointName = "AquaPerla.aktuellerDurchflussProzent";
+
+      adapter.setObjectNotExists(dataPointName, {
+         type: 'state',
+         common: {
+            name: 'aktueller Durchfluss Prozent',
+            type: 'number',
+            read: true,
+            write: false,
+            unit: '%'
+         }
+      });
+
+      adapter.setState(dataPointName, {val: data.aktuellerDurchflussProzent, ack: true});
+   }
+
+   function handleThroughputToday(rawData) {
+      var data = JSON.parse(rawData);
+      var dataPointName = "AquaPerla.durchflussHeute";
+
+      adapter.setObjectNotExists(dataPointName, {
+         type: 'state',
+         common: {
+            name: 'Durchfluss heute',
+            type: 'number',
+            read: true,
+            write: false,
+            unit: 'l'
+         }
+      });
+
+      adapter.setState(dataPointName, {val: data.durchflussHeute, ack: true});
+   }
+
+   function handleThroughputMonth(rawData) {
+      var data = JSON.parse(rawData);
+      var dataPointName = "AquaPerla.durchflussMonat";
+
+      adapter.setObjectNotExists(dataPointName, {
+         type: 'state',
+         common: {
+            name: 'Durchfluss in diesem Monat',
+            type: 'number',
+            read: true,
+            write: false,
+            unit: 'l'
+         }
+      });
+
+      adapter.setState(dataPointName, {val: data.durchflussMonat, ack: true});
+   }
+
+   function handleThroughputYear(rawData) {
+      var data = JSON.parse(rawData);
+      var dataPointName = "AquaPerla.durchflussJahr";
+
+      adapter.setObjectNotExists(dataPointName, {
+         type: 'state',
+         common: {
+            name: 'Durchfluss in diesem Jahr',
+            type: 'number',
+            read: true,
+            write: false,
+            unit: 'l'
+         }
+      });
+
+      adapter.setState(dataPointName, {val: data.durchflussJahr, ack: true});
+   }
+
+   function handleFillupDays(rawData) {
+      var data = JSON.parse(rawData);
+      var dataPointName = "AquaPerla.RegeneriermittelNachfuellenIn";
+
+      adapter.setObjectNotExists(dataPointName, {
+         type: 'state',
+         common: {
+            name: 'Regenerierungsmittel nachfüllen in',
+            type: 'number',
+            read: true,
+            write: false,
+            unit: 'Tagen'
+         }
+      });
+
+      adapter.setState(dataPointName, {val: data.RegeneriemittelNachfuellenIn, ack: true});
+   }
+
+   function handleCurrentLevel(rawData) {
+      var data = JSON.parse(rawData);
+      var dataPointName = "AquaPerla.RegeneriermittelVerbleibend";
+
+      adapter.setObjectNotExists(dataPointName, {
+         type: 'state',
+         common: {
+            name: 'Regeneriermittel verbleibend',
+            type: 'number',
+            read: true,
+            write: false,
+            unit: '%'
+         }
+      });
+
+      adapter.setState(dataPointName, {val: data.RegeneriemittelVerbleibend, ack: true});
+   }
 };
