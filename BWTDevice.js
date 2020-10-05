@@ -64,6 +64,21 @@ module.exports = function(myadapter) {
         handleThroughputYear(data);
         handleFillupDays(data);
         handleCurrentLevel(data);
+
+        var theDate = new Date();
+
+        adapter.setObjectNotExists("AquaPerla.LastUpdate", {
+           type: 'state',
+           common: {
+              name: "letzte Aktualisierung",
+              type: "datetime",
+              role: "indicator.date",
+              read: true,
+              write: false
+           }
+        });
+
+        adapter.setState("AquaPerla.LastUpdate", {val: theDate.toString(), ack: true})
      });
   }
 
