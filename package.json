@@ -44,6 +44,20 @@
     "sinon-chai": "^3.5.0"
   },
   "main": "main.js",
+  "scripts": {
+    "prebuild": "rimraf ./build",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "build": "npm run build:ts",
+    "watch:ts": "tsc -p tsconfig.build.json --watch",
+    "watch": "npm run watch:ts",
+    "test:ts": "mocha --config test/mocharc.custom.json src/**/*.test.ts",
+    "test:package": "mocha test/package --exit",
+    "test:unit": "mocha test/unit --exit",
+    "test:integration": "mocha test/integration --exit",
+    "test": "npm run test:ts && npm run test:package",
+    "coverage": "nyc npm run test:ts",
+    "lint": "eslint --ext .ts src"
+  },
   "bugs": {
     "url": "https://github.com/AppsNPages/ioBroker.bwt/issues"
   },
